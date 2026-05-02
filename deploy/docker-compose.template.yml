@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  web:
+    image: ${PROJECT_NAME}:prod
+    networks:
+      - agent-net
+    deploy:
+      mode: replicated
+      replicas: ${REPLICAS:-2}
+      resources:
+        limits:
+          memory: ${MEMORY_LIMIT:-256M}
+          cpus: "${CPU_LIMIT:-0.5}"
+        reservations:
+          memory: ${MEMORY_RESERVE:-128M}
+          cpus: "${CPU_RESERVE:-0.25}"
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=agent-net"
+        - "traefik.http.routers.${ROUTER_NAME}.rule=Host(\`${DOMAIN}\`)"
+        - "traefik.http.routers.${ROUTER_NAME}.entrypoints=websecure"
+        - "traefik.http.routers.${ROUTER_NAME}.tls=true"
+        - "traefik.http.routers.${ROUTER_NAME}.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.${ROUTER_NAME}.loadbalancer.server.port=3000"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+networks:
+  agent-net:
+    external: true

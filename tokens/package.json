@@ -1,0 +1,17 @@
+{
+  "name": "@ai-whisperers/tokens",
+  "version": "0.1.0",
+  "description": "Shared design tokens and Tailwind CSS presets for AI Whisperers projects",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+  },
+  "devDependencies": {
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.0"
+  }
+}

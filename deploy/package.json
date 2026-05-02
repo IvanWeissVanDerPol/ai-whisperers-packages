@@ -1,0 +1,10 @@
+{
+  "name": "@ai-whisperers/deploy",
+  "version": "0.1.0",
+  "description": "Deployment templates and scripts for AI Whisperers Docker Swarm projects",
+  "main": "deploy.sh",
+  "files": ["deploy.sh", "docker-compose.template.yml", "Dockerfile.template"],
+  "bin": {
+    "deploy-site": "./deploy.sh"
+  }
+}
