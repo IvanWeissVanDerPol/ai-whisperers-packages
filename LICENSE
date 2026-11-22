@@ -1,0 +1,45 @@
+# LICENSE
+
+**The licence for this repository and for the packages it publishes has not been
+determined. No licence is granted by this file.**
+
+The maintainers of `ai-whisperers-packages` have not yet recorded a licence choice
+anywhere in this repository, so this file deliberately does **not** contain the text
+of a standard licence (MIT, Apache-2.0, BSD, ISC, …). Dropping in one of those
+would assert a decision that the repository does not record.
+
+## What was checked
+
+The following sources were examined for a licence statement, and none of them
+records one:
+
+| Source | Result |
+| --- | --- |
+| `deploy/package.json`, `tokens/package.json`, `ui/package.json` | No `license` field in any of the three manifests. |
+| Git history (all commits on all branches) | No `LICENSE` file has ever existed; no commit message mentions a licence; no `Signed-off-by`/`Co-authored-by` licence trailers. |
+| Source files (`deploy/`, `tokens/src/`, `ui/src/`) | No copyright header or licence notice. |
+| `README.md` (branch `fleet/t_56eff269`) | Documents packages and ownership, but has no licence section. |
+| `CHANGELOG.md` (branch `fleet/t_5d206349`) and `docs/deploy.md` (branch `fleet/t_7488b49d`) | No licence mention. |
+| GitHub repository metadata | Reports no licence (`"license": null`); the repository licence endpoint returns 404. |
+| npm registry (`@ai-whisperers/tokens`, `@ai-whisperers/ui`, `@ai-whisperers/deploy`) | Not published yet (404), so no published licence metadata exists to read. |
+| The owner's other public repositories | No house licence convention: all report no licence, apart from one `NOASSERTION` (proprietary) project. |
+
+## Status until a licence is chosen
+
+Because no licence has been granted, the default under copyright applies: the
+copyright holder retains all rights. Copyright (c) 2026 AI Whisperers
+(Ivan Weiss van der Pol). The packages are **not** open source and are not
+licensed for reuse, modification or redistribution.
+
+## Resolving this
+
+To put this repository on a definite footing, the maintainers should:
+
+1. Choose a licence and replace this file with its full text.
+2. Add the matching `"license"` field to `deploy/package.json`,
+   `tokens/package.json` and `ui/package.json`, so that the published package
+   metadata matches the file.
+3. Optionally reference the licence in the `README.md`.
+
+Until step 1 and step 2 are done, this file is a placeholder recording the
+absence of a licence decision, and should not be read as granting any rights.
